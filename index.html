@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stef — Tech Enthusiast & Developer</title>
+    <title>Stef — Theology, Tech &amp; Service</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -29,6 +29,18 @@
             font-family: 'Syne', sans-serif;
             overflow-x: hidden;
             cursor: none;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
         /* Custom cursor */
@@ -260,7 +272,7 @@
             font-size: 1.05rem;
             color: var(--muted);
             line-height: 1.7;
-            max-width: 420px;
+            max-width: 520px;
             margin-bottom: 2.5rem;
             font-weight: 400;
             opacity: 0;
@@ -287,6 +299,9 @@
             transition: all 0.2s;
             position: relative;
             overflow: hidden;
+            border: none;
+            display: inline-block;
+            cursor: none;
         }
         .btn-primary:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--accent2); }
 
@@ -298,6 +313,9 @@
             font-size: 0.8rem;
             text-decoration: none;
             transition: all 0.2s;
+            display: inline-block;
+            background: transparent;
+            cursor: none;
         }
         .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
@@ -396,6 +414,50 @@
         }
         @keyframes blink { 50% { opacity: 0; } }
 
+        /* ===== ABOUT ===== */
+        #about {
+            padding: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .about-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            transition: background 0.2s;
+        }
+        .about-card:hover { background: #111923; }
+        .about-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--accent);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+        .about-text {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .about-text a { color: var(--accent); text-decoration: none; }
+        .about-text a:hover { text-decoration: underline; }
+
+        /* ===== PROJECTS CTA ===== */
+        .cta-strip {
+            padding: 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+
         /* ===== SOCIALS BAR ===== */
         .socials-bar {
             padding: 2.5rem 4rem;
@@ -408,7 +470,7 @@
             z-index: 2;
         }
         .social-pill {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
             padding: 10px 20px;
@@ -420,6 +482,7 @@
             transition: all 0.2s;
             position: relative;
             overflow: hidden;
+            cursor: none;
         }
         .social-pill::before {
             content: '';
@@ -430,7 +493,6 @@
         }
         .social-pill:hover { border-color: currentColor; color: inherit; transform: translateY(-2px); }
         .social-pill:hover::before { opacity: 0.05; }
-        .sp-discord { --c: #7289DA; }
         .sp-discord:hover { color: #7289DA; border-color: #7289DA; }
         .sp-instagram:hover { color: #E4405F; border-color: #E4405F; }
         .sp-youtube:hover { color: #FF0000; border-color: #FF0000; }
@@ -691,7 +753,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: gap;
+            flex-wrap: wrap;
+            gap: 1rem;
             position: relative;
             z-index: 2;
         }
@@ -712,11 +775,13 @@
             color: var(--muted);
             font-size: 1.1rem;
             transition: color 0.2s;
+            text-decoration: none;
+            cursor: none;
         }
         .footer-icons a:hover { color: var(--accent); }
 
         .footer-support {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
             padding: 10px 20px;
@@ -726,6 +791,7 @@
             font-size: 0.75rem;
             text-decoration: none;
             transition: all 0.2s;
+            cursor: none;
         }
         .footer-support:hover { border-color: #00457C; color: #1da1f2; }
 
@@ -768,166 +834,206 @@
             .hero-right { order: -1; }
             nav { padding: 0 1rem; }
             .nav-links { gap: 1rem; }
-            #stack, #projects, #stats, footer { padding: 3rem 1.5rem; }
+            #stack, #projects, #stats, footer, #about, .socials-bar { padding-left: 1.5rem; padding-right: 1.5rem; }
+            #stack, #projects, #stats, footer, #about { padding-top: 3rem; padding-bottom: 3rem; }
             .stats-grid { grid-template-columns: 1fr; }
-            footer { flex-direction: column; gap: 1.5rem; text-align: center; }
-            .socials-bar { padding: 2rem 1.5rem; justify-content: center; }
+            footer { flex-direction: column; align-items: center; gap: 1.5rem; text-align: center; }
+            .socials-bar { justify-content: center; }
             .projects-header-row { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .about-card { grid-template-columns: 1fr; }
+        }
+
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
 <body>
 
+    <a href="#hero" class="sr-only">Skip to content</a>
+
     <!-- Custom Cursor -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
 
     <!-- Background -->
-    <div class="hero-grid-bg"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
 
     <!-- Navigation -->
-    <nav>
+    <nav aria-label="Primary">
         <a href="#hero" class="nav-logo">
-            <div class="nav-logo-box">S</div>
+            <div class="nav-logo-box" aria-hidden="true">S</div>
             <span>stefanutz30.dev</span>
         </a>
         <ul class="nav-links">
+            <li><a href="#about">About</a></li>
             <li><a href="#stack">Stack</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#stats">Stats</a></li>
-            <li><a href="https://github.com/stefanutz30" target="_blank" class="nav-github">GitHub ↗</a></li>
+            <li><a href="https://github.com/stefanutz30" target="_blank" rel="noopener noreferrer" class="nav-github">GitHub ↗</a></li>
         </ul>
     </nav>
 
-    <!-- Hero -->
-    <section id="hero">
-        <div class="hero-left">
-            <div class="hero-tag">Available for collaborations</div>
-            <h1 class="hero-name">
-                Hey, I'm<br>
-                <span>Stef.</span>
-            </h1>
-            <p class="hero-desc">
-                A student and tech enthusiast who loves tinkering, building things, and pushing pixels around.
-            </p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn-primary">View Projects</a>
-                <a href="https://github.com/stefanutz30" target="_blank" class="btn-outline"><i class="fab fa-github"></i> GitHub</a>
-            </div>
-        </div>
-
-        <div class="hero-right">
-            <div class="avatar-container">
-                <div class="avatar-skeleton" id="pfp-skeleton"></div>
-                <img id="profile-pic" class="avatar-img" src="" alt="Stef" style="display:none; position:absolute; top:0; left:0;">
-            </div>
-            <div class="terminal">
-                <div class="terminal-bar">
-                    <div class="t-dot t-dot-r"></div>
-                    <div class="t-dot t-dot-y"></div>
-                    <div class="t-dot t-dot-g"></div>
-                    <span class="terminal-title">stef@dev ~ zsh</span>
-                </div>
-                <div class="terminal-body">
-                    <div><span class="t-prompt">❯ </span><span class="t-cmd">whoami</span></div>
-                    <div class="t-out">Stef — student &amp; builder</div>
-                    <div><span class="t-prompt">❯ </span><span class="t-cmd">cat interests.txt</span></div>
-                    <div class="t-out"><span class="t-hi">Python</span> · HTML · Raspberry Pi</div>
-                    <div class="t-out">Tinkering · Open Source</div>
-                    <div><span class="t-prompt">❯ </span><span class="t-cursor"></span></div>
+    <main>
+        <!-- Hero -->
+        <section id="hero">
+            <div class="hero-left">
+                <div class="hero-tag">Pastoral Theology · Tech &amp; Service</div>
+                <h1 class="hero-name">
+                    Hey, I'm<br>
+                    <span>Stef.</span>
+                </h1>
+                <p class="hero-desc">
+                    Year 2 Pastoral Theology student exploring how faith, service, and technology can overlap. I build small tools, tinker with systems, and try to be useful.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary">View Projects</a>
+                    <a href="https://github.com/stefanutz30" target="_blank" rel="noopener noreferrer" class="btn-outline"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Socials -->
-    <div class="socials-bar reveal">
-        <a href="https://discord.gg/stefanutz30" target="_blank" class="social-pill sp-discord">
-            <i class="fab fa-discord"></i> Discord
-        </a>
-        <a href="https://instagram.com/stefanutz_30" target="_blank" class="social-pill sp-instagram">
-            <i class="fab fa-instagram"></i> Instagram
-        </a>
-        <a href="https://youtube.com/@Stefanutz_30" target="_blank" class="social-pill sp-youtube">
-            <i class="fab fa-youtube"></i> YouTube
-        </a>
-        <a href="mailto:Spaminhaler.confront957@passmail.net" class="social-pill sp-email">
-            <i class="fas fa-envelope"></i> Email
-        </a>
-    </div>
+            <div class="hero-right">
+                <div class="avatar-container">
+                    <div class="avatar-skeleton" id="pfp-skeleton"></div>
+                    <img id="profile-pic" class="avatar-img" src="" alt="Stef" style="display:none; position:absolute; top:0; left:0;">
+                </div>
+                <div class="terminal">
+                    <div class="terminal-bar">
+                        <div class="t-dot t-dot-r"></div>
+                        <div class="t-dot t-dot-y"></div>
+                        <div class="t-dot t-dot-g"></div>
+                        <span class="terminal-title">stef@dev ~ zsh</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div><span class="t-prompt">❯ </span><span class="t-cmd">whoami</span></div>
+                        <div class="t-out">Stef — theology student &amp; builder</div>
+                        <div><span class="t-prompt">❯ </span><span class="t-cmd">cat interests.txt</span></div>
+                        <div class="t-out"><span class="t-hi">Python</span> · Linux · Service</div>
+                        <div class="t-out">Pastoral formation · Open Source</div>
+                        <div><span class="t-prompt">❯ </span><span class="t-cursor"></span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Tech Stack -->
-    <section id="stack">
-        <hr class="stack-divider">
-        <div class="section-header reveal">
-            <span class="section-num">01 /</span>
-            <h2 class="section-title">Tech Stack</h2>
-            <div class="section-line"></div>
-        </div>
-        <div class="stack-grid reveal">
-            <div class="stack-item"><span class="stack-icon">🐍</span> Python</div>
-            <div class="stack-item"><span class="stack-icon">🌐</span> HTML5</div>
-            <div class="stack-item"><span class="stack-icon">🍓</span> Raspberry Pi</div>
-            <div class="stack-item"><span class="stack-icon">🐧</span> Linux</div>
-            <div class="stack-item"><span class="stack-icon">🔧</span> Bash / Shell</div>
-            <div class="stack-item"><span class="stack-icon">📡</span> Networking</div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-        <hr class="stack-divider">
-        <div class="projects-header-row reveal">
-            <div class="section-header" style="margin-bottom:0">
-                <span class="section-num">02 /</span>
-                <h2 class="section-title">Projects</h2>
+        <!-- About -->
+        <section id="about" class="reveal">
+            <hr class="stack-divider">
+            <div class="section-header">
+                <span class="section-num">01 /</span>
+                <h2 class="section-title">About</h2>
                 <div class="section-line"></div>
             </div>
-            <a href="https://github.com/stefanutz30?tab=repositories" target="_blank" class="view-all">
-                All repositories ↗
+            <div class="about-card">
+                <div>
+                    <div class="about-label">Background</div>
+                    <p class="about-text">
+                        I’m studying Pastoral Theology and moving toward ordination in the Romanian Orthodox Church. This site is a thin bridge between that path and the parts of tech I still care about: small projects, command-line tinkering, and quiet problem-solving.
+                    </p>
+                </div>
+                <div>
+                    <div class="about-label">Current focus</div>
+                    <p class="about-text">
+                        Right now I’m focused on formation, local service, and a few long-term projects like <a href="https://github.com/stefanutz30" target="_blank" rel="noopener noreferrer">Carpații3D</a> and upcoming Erasmus+ work in Croatia, July 2026. If the subject interests you, reach out.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Socials -->
+        <div class="socials-bar reveal">
+            <a href="https://discord.gg/stefanutz30" target="_blank" rel="noopener noreferrer" class="social-pill sp-discord">
+                <i class="fab fa-discord" aria-hidden="true"></i> Discord
+            </a>
+            <a href="https://instagram.com/stefanutz_30" target="_blank" rel="noopener noreferrer" class="social-pill sp-instagram">
+                <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
+            </a>
+            <a href="https://youtube.com/@Stefanutz_30" target="_blank" rel="noopener noreferrer" class="social-pill sp-youtube">
+                <i class="fab fa-youtube" aria-hidden="true"></i> YouTube
+            </a>
+            <a href="mailto:s_nastase@icloud.com" class="social-pill sp-email">
+                <i class="fas fa-envelope" aria-hidden="true"></i> Email
             </a>
         </div>
-        <br><br>
 
-        <div class="repo-grid" id="repo-grid">
-            <div class="repo-skeleton"><div class="sk-line med"></div><div class="sk-line short"></div><div class="sk-line med"></div></div>
-            <div class="repo-skeleton"><div class="sk-line med"></div><div class="sk-line short"></div><div class="sk-line med"></div></div>
-            <div class="repo-skeleton"><div class="sk-line med"></div><div class="sk-line short"></div><div class="sk-line med"></div></div>
-            <div class="repo-skeleton"><div class="sk-line med"></div><div class="sk-line short"></div><div class="sk-line med"></div></div>
-            <div class="repo-skeleton"><div class="sk-line med"></div><div class="sk-line short"></div><div class="sk-line med"></div></div>
-            <div class="repo-skeleton"><div class="sk-line med"></div><div class="sk-line short"></div><div class="sk-line med"></div></div>
-        </div>
-    </section>
+        <!-- Tech Stack -->
+        <section id="stack">
+            <hr class="stack-divider">
+            <div class="section-header reveal">
+                <span class="section-num">02 /</span>
+                <h2 class="section-title">Tech Stack</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="stack-grid reveal">
+                <div class="stack-item"><span class="stack-icon">🐍</span> Python</div>
+                <div class="stack-item"><span class="stack-icon">🌐</span> HTML5</div>
+                <div class="stack-item"><span class="stack-icon">🍓</span> Raspberry Pi</div>
+                <div class="stack-item"><span class="stack-icon">🐧</span> Linux</div>
+                <div class="stack-item"><span class="stack-icon">🔧</span> Bash / Shell</div>
+                <div class="stack-item"><span class="stack-icon">📡</span> Networking</div>
+            </div>
+        </section>
 
-    <!-- Stats -->
-    <section id="stats">
-        <hr class="stats-bg-line">
-        <div class="section-header reveal">
-            <span class="section-num">03 /</span>
-            <h2 class="section-title">GitHub Insights</h2>
-            <div class="section-line"></div>
-        </div>
+        <!-- Projects -->
+        <section id="projects">
+            <hr class="stack-divider">
+            <div class="projects-header-row reveal">
+                <div class="section-header" style="margin-bottom:0">
+                    <span class="section-num">03 /</span>
+                    <h2 class="section-title">Projects</h2>
+                    <div class="section-line"></div>
+                </div>
+                <a href="https://github.com/stefanutz30?tab=repositories" target="_blank" rel="noopener noreferrer" class="view-all">
+                    All repositories ↗
+                </a>
+            </div>
+            <br><br>
 
-        <div class="stats-grid reveal">
-            <div class="stat-panel">
-                <img src="https://github-readme-stats.vercel.app/api?username=Stefanutz30&theme=transparent&hide_border=true&show_icons=true&title_color=4fffff&icon_color=4fffff&text_color=94a3b8&ring_color=4fffff" alt="GitHub Stats">
+            <div class="repo-grid" id="repo-grid">
+                <div class="repo-skeleton"><div class="sk-line med"></div><div class="sk-line short"></div><div class="sk-line med"></div></div>
+                <div class="repo-skeleton"><div class="sk-line med"></div><div class="sk-line short"></div><div class="sk-line med"></div></div>
+                <div class="repo-skeleton"><div class="sk-line med"></div><div class="sk-line short"></div><div class="sk-line med"></div></div>
+                <div class="repo-skeleton"><div class="sk-line med"></div><div class="sk-line short"></div><div class="sk-line med"></div></div>
+                <div class="repo-skeleton"><div class="sk-line med"></div><div class="sk-line short"></div><div class="sk-line med"></div></div>
+                <div class="repo-skeleton"><div class="sk-line med"></div><div class="sk-line short"></div><div class="sk-line med"></div></div>
             </div>
-            <div class="stat-panel">
-                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Stefanutz30&theme=transparent&hide_border=true&layout=compact&title_color=4fffff&text_color=94a3b8" alt="Top Languages">
+        </section>
+
+        <!-- Stats -->
+        <section id="stats">
+            <hr class="stats-bg-line">
+            <div class="section-header reveal">
+                <span class="section-num">04 /</span>
+                <h2 class="section-title">GitHub Insights</h2>
+                <div class="section-line"></div>
             </div>
-        </div>
-        <div class="stats-wide reveal">
-            <div class="stat-panel" style="padding: 2rem;">
-                <img src="https://nirzak-streak-stats.vercel.app/?user=Stefanutz30&theme=transparent&hide_border=true&ring=4fffff&fire=ff4f7b&currStreakLabel=4fffff&sideNums=94a3b8&sideLabels=64748b&dates=64748b" alt="GitHub Streak">
+
+            <div class="stats-grid reveal">
+                <div class="stat-panel">
+                    <img src="https://github-readme-stats.vercel.app/api?username=Stefanutz30&theme=transparent&hide_border=true&show_icons=true&title_color=4fffff&icon_color=4fffff&text_color=94a3b8&ring_color=4fffff" alt="GitHub Stats">
+                </div>
+                <div class="stat-panel">
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Stefanutz30&theme=transparent&hide_border=true&layout=compact&title_color=4fffff&text_color=94a3b8" alt="Top Languages">
+                </div>
             </div>
-        </div>
-        <div class="trophies-panel reveal">
-            <p class="trophies-label">Achievements</p>
-            <img src="https://github-profile-trophy.vercel.app/?username=Stefanutz30&theme=radical&no-frame=true&no-bg=true&margin-w=4" alt="Trophies">
-        </div>
-    </section>
+            <div class="stats-wide reveal">
+                <div class="stat-panel" style="padding: 2rem;">
+                    <img src="https://nirzak-streak-stats.vercel.app/?user=Stefanutz30&theme=transparent&hide_border=true&ring=4fffff&fire=ff4f7b&currStreakLabel=4fffff&sideNums=94a3b8&sideLabels=64748b&dates=64748b" alt="GitHub Streak">
+                </div>
+            </div>
+            <div class="trophies-panel reveal">
+                <p class="trophies-label">Achievements</p>
+                <img src="https://github-profile-trophy.vercel.app/?username=Stefanutz30&theme=radical&no-frame=true&no-bg=true&margin-w=4" alt="Trophies">
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -937,22 +1043,20 @@
         </div>
 
         <div class="footer-icons">
-            <a href="https://github.com/stefanutz30" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://twitch.tv/stefanutz30" target="_blank"><i class="fab fa-twitch"></i></a>
-            <a href="https://tiktok.com/@Stefanutz300" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://youtube.com/@Stefanutz_30" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://github.com/stefanutz30" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://twitch.tv/stefanutz30" target="_blank" rel="noopener noreferrer" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://tiktok.com/@Stefanutz300" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://youtube.com/@Stefanutz_30" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
 
-        <a href="https://paypal.me/itsmestefan4189" target="_blank" class="footer-support">
-            <i class="fab fa-paypal"></i> Support my work
+        <a href="mailto:s_nastase@icloud.com" class="footer-support">
+            <i class="fas fa-envelope" aria-hidden="true"></i> Contact
         </a>
     </footer>
 
     <script>
-        // Year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Custom cursor
         const cursor = document.getElementById('cursor');
         const cursorRing = document.getElementById('cursorRing');
         let mx = 0, my = 0, rx = 0, ry = 0;
@@ -969,13 +1073,12 @@
         animateCursor();
         document.addEventListener('mousedown', () => { cursor.style.transform = 'translate(-50%,-50%) scale(0.7)'; });
         document.addEventListener('mouseup', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; });
-        // Enlarge on hoverable
+
         document.querySelectorAll('a, button').forEach(el => {
             el.addEventListener('mouseenter', () => { cursorRing.style.width = '60px'; cursorRing.style.height = '60px'; cursorRing.style.opacity = '0.3'; });
             el.addEventListener('mouseleave', () => { cursorRing.style.width = '36px'; cursorRing.style.height = '36px'; cursorRing.style.opacity = '0.5'; });
         });
 
-        // Scroll reveal
         const reveals = document.querySelectorAll('.reveal');
         const obs = new IntersectionObserver((entries) => {
             entries.forEach((e, i) => {
@@ -987,7 +1090,6 @@
         }, { threshold: 0.1 });
         reveals.forEach(el => obs.observe(el));
 
-        // GitHub Data
         const USERNAME = 'stefanutz30';
 
         async function fetchGitHub() {
@@ -999,7 +1101,6 @@
                 const user = await userRes.json();
                 const repos = await repoRes.json();
 
-                // Avatar
                 if (user.avatar_url) {
                     const img = document.getElementById('profile-pic');
                     const sk = document.getElementById('pfp-skeleton');
@@ -1007,7 +1108,6 @@
                     img.onload = () => { img.style.display = 'block'; sk.style.display = 'none'; };
                 }
 
-                // Repos
                 const grid = document.getElementById('repo-grid');
                 grid.innerHTML = '';
                 grid.style.background = 'var(--border)';
@@ -1026,19 +1126,19 @@
                         card.className = 'repo-card reveal';
                         card.innerHTML = `
                             <div class="repo-card-top">
-                                <i class="far fa-folder repo-icon"></i>
+                                <i class="far fa-folder repo-icon" aria-hidden="true"></i>
                                 <div class="repo-meta">
-                                    <span><i class="far fa-star"></i> ${repo.stargazers_count}</span>
-                                    <span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
+                                    <span><i class="far fa-star" aria-hidden="true"></i> ${repo.stargazers_count}</span>
+                                    <span><i class="fas fa-code-branch" aria-hidden="true"></i> ${repo.forks_count}</span>
                                 </div>
                             </div>
                             <div class="repo-name">
-                                <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+                                <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">${repo.name}</a>
                             </div>
                             <p class="repo-desc">${repo.description || 'No description provided for this repository.'}</p>
                             <div class="repo-footer">
                                 <div class="repo-lang">
-                                    <span class="lang-dot" style="background:${color}"></span>
+                                    <span class="lang-dot" style="background:${color}" aria-hidden="true"></span>
                                     <span>${repo.language || 'Plain Text'}</span>
                                 </div>
                                 <span class="repo-date">${date}</span>
@@ -1046,7 +1146,7 @@
                         `;
                         grid.appendChild(card);
                     });
-                    // Re-observe new cards
+
                     grid.querySelectorAll('.reveal').forEach(el => obs.observe(el));
                 } else {
                     grid.style.background = 'none';
