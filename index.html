@@ -1094,10 +1094,13 @@
 
         async function fetchGitHub() {
             try {
+                const normalizedUser = USERNAME.trim().replace(/^@/, '');
                 const [userRes, repoRes] = await Promise.all([
-                    fetch(`https://api.github.com/users/${USERNAME}`),
-                    fetch(`https://api.github.com/users/${USERNAME}/repos?sort=updated&per_page=6`)
+                    fetch(`https://api.github.com/users/${normalizedUser}`),
+                    fetch(`https://api.github.com/users/${normalizedUser}/repos?sort=updated&per_page=6`)
                 ]);
+                if (!userRes.ok) throw new Error(`User API ${userRes.status}`);
+                if (!repoRes.ok) throw new Error(`Repo API ${repoRes.status}`);
                 const user = await userRes.json();
                 const repos = await repoRes.json();
 
