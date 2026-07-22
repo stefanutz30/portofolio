@@ -1,40 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="#sitemap-style"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    
-    <!-- Core Portfolio Homepage -->
+<?xml-stylesheet type="text/xsl" href="#sitemap-stylesheet"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- ================================================= -->
+    <!-- MAIN PORTFOLIO LANDING PAGE                       -->
+    <!-- ================================================= -->
     <url>
         <loc>https://stefanutz30.vercel.app/</loc>
         <lastmod>2026-06-01</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>1.00</priority>
+        <priority>1.0</priority>
     </url>
 
-    <!-- Section Anchors (Structured for deep indexing & crawlers) -->
+    <!-- ================================================= -->
+    <!-- INTERNAL SECTIONS (Anchors)                       -->
+    <!-- ================================================= -->
     <url>
         <loc>https://stefanutz30.vercel.app/#about</loc>
         <lastmod>2026-06-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://stefanutz30.vercel.app/#stack</loc>
         <lastmod>2026-06-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://stefanutz30.vercel.app/#projects</loc>
         <lastmod>2026-06-01</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.90</priority>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- ================================================= -->
+    <!-- EXTERNAL PROFILES & REPOSITORIES                  -->
+    <!-- ================================================= -->
+    <url>
+        <loc>https://github.com/stefanutz30</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://stefanutz30.vercel.app/#stats</loc>
+        <loc>https://github.com/stefanutz30?tab=repositories</loc>
         <lastmod>2026-06-01</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.70</priority>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
     </url>
+    <url>
+        <loc>https://youtube.com/@Stefanutz_30</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://instagram.com/stefanutz_30</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://twitch.tv/stefanutz30</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://tiktok.com/@Stefanutz300</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://discord.gg/stefanutz30</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+</urlset>
+
+<!-- ================================================= -->
+<!-- PREMIUM STYLESHEET (XSL) FOR VISUAL DISPLAY       -->
+<!-- ================================================= -->
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:s="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <xsl:output method="html" encoding="UTF-8" indent="yes"/>
+    <xsl:template match="/">
+        <html lang="en">
+        <head>
+            <title>XML Sitemap — stefanutz30.dev</title>
+            <style>
+                body {
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                    background-color: #0f172a;
+                    color: #f8fafc;
+                    margin: 0;
+                    padding: 40px;
+                }
+                .container {
+                    max-width: 900px;
+                    margin: auto;
+                    background: #1e293b;
+                    padding: 30px;
+                    border-radius: 12px;
+                    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+                    border: 1px solid #334155;
+                }
+                h1 {
+                    font-size: 24px;
+                    margin-bottom: 5px;
+                    color: #38bdf8;
+                }
+                p.subtitle {
+                    color: #94a3b8;
+                    font-size: 14px;
+                    margin-bottom: 25px;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 10px;
+                }
+                th, td {
+                    padding: 12px 15px;
+                    text-align: left;
+                    border-bottom: 1px solid #334155;
+                    font-size: 14px;
+                }
+                th {
+                    background-color: #0f172a;
+                    color: #cbd5e1;
+                    font-weight: 600;
+                }
+                tr:hover {
+                    background-color: #273548;
+                }
+                a {
+                    color: #38bdf8;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                .badge {
+                    background: #0284c7;
+                    color: #fff;
+                    padding: 3px 8px;
+                    border-radius: 4px;
+                    font-size: 11px;
+                    font-weight: bold;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>stefanutz30.dev — Visual XML Sitemap</h1>
+                <p class="subtitle">Generated for portfolio indexing, structured tracking, and navigation. Total URLs: <xsl:value-of select="count(s:urlset/s:url)"/></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>URL / Location</th>
+                            <th>Priority</th>
+                            <th>Change Frequency</th>
+                            <th>Last Modified</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <xsl:for-each select="s:urlset/s:url">
+                            <tr>
+                                <td>
+                                    <a href="{s:loc}" target="_blank"><xsl:value-of select="s:loc"/></a>
+                                </td>
+                                <td>
+                                    <span class="badge"><xsl:value-of select="s:priority"/></span>
+                                </td>
+                                <td><xsl:value-of select="s:changefreq"/></td>
+                                <td><xsl:value-of select="s:lastmod"/></td>
+                            </tr>
+                        </xsl:for-each>
+                    </tbody>
+                </table>
+            </div>
+        </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>    </url>
 
     <!-- Embedded Premium Visual Stylesheet (XSL) for Browser Preview -->
     <xs:element name="sitemap-style">
