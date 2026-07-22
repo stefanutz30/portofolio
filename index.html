@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stef — Tech Enthusiast & Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Stefan Iulian — Year 2 Pastoral Theology student, developer, and builder.">
+    <meta name="theme-color" content="#080b10">
+    <meta property="og:title" content="Stefan Iulian — Tech Enthusiast & Developer">
+    <meta property="og:description" content="Pastoral Theology student exploring how faith, service, and technology overlap.">
+    <meta property="og:url" content="https://stefanutz30.vercel.app">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -66,7 +74,6 @@
             transition: transform 0.12s ease-out, width 0.2s, height 0.2s, opacity 0.2s;
             opacity: 0.5;
         }
-        a:hover ~ .cursor, button:hover ~ .cursor { transform: translate(-50%,-50%) scale(2.5); }
 
         /* Noise overlay */
         body::before {
@@ -795,6 +802,22 @@
         }
         .footer-support:hover { border-color: #00457C; color: #1da1f2; }
 
+        /* Button base normalization to preserve original styling map */
+        .footer-support, .social-pill, button {
+            appearance: none;
+            font: inherit;
+            color: inherit;
+            border: inherit;
+            padding: inherit;
+            cursor: inherit;
+            display: inline-flex;
+            background: none;
+        }
+        button:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
         /* ===== ANIMATIONS ===== */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(20px); }
@@ -821,7 +844,14 @@
         }
 
         /* ===== RESPONSIVE ===== */
+        @media (pointer: coarse) {
+            body { cursor: auto; }
+            .cursor, .cursor-ring { display: none; }
+        }
+
         @media (max-width: 768px) {
+            body { cursor: auto; }
+            .cursor, .cursor-ring { display: none; }
             #hero {
                 grid-template-columns: 1fr;
                 padding: 7rem 2rem 3rem;
@@ -958,9 +988,9 @@
             <a href="https://youtube.com/@Stefanutz_30" target="_blank" rel="noopener noreferrer" class="social-pill sp-youtube">
                 <i class="fab fa-youtube" aria-hidden="true"></i> YouTube
             </a>
-            <a href="mailto:s_nastase@icloud.com" class="social-pill sp-email">
+            <button onclick="location.href='mailto:s_nastase@icloud.com'" class="social-pill sp-email">
                 <i class="fas fa-envelope" aria-hidden="true"></i> Email
-            </a>
+            </button>
         </div>
 
         <!-- Tech Stack -->
@@ -1005,7 +1035,28 @@
                 <div class="repo-skeleton"><div class="sk-line med"></div><div class="sk-line short"></div><div class="sk-line med"></div></div>
             </div>
         </section>
-        
+
+        <section id="stats">
+            <hr class="stack-divider">
+            <div class="section-header reveal">
+                <span class="section-num">04 /</span>
+                <h2 class="section-title">Stats</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-panel">
+                    <img src="https://github-readme-stats.vercel.app/api?username=stefanutz30&show_icons=true&hide_title=true&bg=080b10&text_color=e2e8f0&icon_color=4fffff&border_color=64748b30" alt="GitHub stats" />
+                </div>
+                <div class="stat-panel">
+                    <img src="https://github-readme-streak-stats.dreamy-johnson14.workers.dev/?user=stefanutz30&stroke=ffffff&background=080b10&ring=4fffff&fire=ff4f7b&currStreakLabel=4fffff&currStreakNum=e2e8f0&sideNums=64748b&sideLabels=64748b&dates=64748b&hide_border=true" alt="GitHub streak stats" />
+                </div>
+                <div class="stat-panel" style="grid-column: 1 / -1;">
+                    <div class="trophies-label">Achievements</div>
+                    <img src="https://github-profile-trophy.vercel.app/?username=stefanutz30&theme=darkhub&no-bg=true&margin-w=8&margin-h=8" alt="GitHub profile trophies" />
+                </div>
+            </div>
+        </section>
+
     <!-- Footer -->
     <footer>
         <div class="footer-left">
@@ -1020,9 +1071,9 @@
             <a href="https://youtube.com/@Stefanutz_30" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
 
-        <a href="mailto:s_nastase@icloud.com" class="footer-support">
+        <button onclick="location.href='mailto:s_nastase@icloud.com'" class="footer-support">
             <i class="fas fa-envelope" aria-hidden="true"></i> Contact
-        </a>
+        </button>
     </footer>
 
     <script>
@@ -1045,9 +1096,9 @@
         document.addEventListener('mousedown', () => { cursor.style.transform = 'translate(-50%,-50%) scale(0.7)'; });
         document.addEventListener('mouseup', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; });
 
-        document.querySelectorAll('a, button').forEach(el => {
-            el.addEventListener('mouseenter', () => { cursorRing.style.width = '60px'; cursorRing.style.height = '60px'; cursorRing.style.opacity = '0.3'; });
-            el.addEventListener('mouseleave', () => { cursorRing.style.width = '36px'; cursorRing.style.height = '36px'; cursorRing.style.opacity = '0.5'; });
+        document.querySelectorAll('a, button, .social-pill').forEach(el => {
+            el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%,-50%) scale(2.5)'; cursorRing.style.width = '60px'; cursorRing.style.height = '60px'; cursorRing.style.opacity = '0.3'; });
+            el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; cursorRing.style.width = '36px'; cursorRing.style.height = '36px'; cursorRing.style.opacity = '0.5'; });
         });
 
         const reveals = document.querySelectorAll('.reveal');
@@ -1131,6 +1182,16 @@
         }
 
         fetchGitHub();
+
+        setTimeout(() => {
+            const grid = document.getElementById('repo-grid');
+            if (!grid) return;
+            if (grid.querySelector('.repo-skeleton')) {
+                grid.style.background = 'none';
+                grid.innerHTML = '<div style="padding:2.5rem;text-align:center;grid-column:1/-1;color:var(--muted);font-family:Space Mono,monospace;font-size:0.8rem;opacity:0.7">Could not load repositories. <a href="https://github.com/stefanutz30" style="color:var(--accent)">View on GitHub↗</a></div>';
+            }
+        }, 10000);
+
     </script>
 </body>
 </html>
