@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+fix this code <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,6 @@
     <meta property="og:url" content="https://stefanutz30.vercel.app">
     <meta property="og:type" content="website">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-    
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -186,12 +185,12 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(79, 255, 255, 0.15);
+            background: var(--accent);
             transform: translateX(-100%);
             transition: transform 0.25s ease;
             z-index: -1;
         }
-        .nav-github:hover { color: var(--accent) !important; border-color: var(--accent); box-shadow: 0 0 12px rgba(79, 255, 255, 0.2); }
+        .nav-github:hover { color: var(--bg) !important; }
         .nav-github:hover::before { transform: translateX(0); }
 
         /* ===== HERO ===== */
@@ -289,75 +288,43 @@
 
         .hero-actions {
             display: flex;
-            gap: 0.75rem;
+            gap: 1rem;
             flex-wrap: wrap;
-            align-items: center;
             opacity: 0;
             animation: fadeUp 0.6s 0.4s forwards;
         }
 
         .btn-primary {
-            height: 32px;
-            padding: 0 16px;
+            padding: 12px 28px;
             background: var(--accent);
             color: var(--bg);
             font-family: 'Space Mono', monospace;
-            font-size: 0.72rem;
+            font-size: 0.8rem;
             font-weight: 700;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.05em;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: all 0.2s;
             position: relative;
             overflow: hidden;
-            border: 1px solid var(--accent);
-            border-radius: 3px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
-            text-align: center;
+            border: none;
+            display: inline-block;
             cursor: none;
-            box-sizing: border-box;
         }
-        .btn-primary:hover, .btn-primary:focus {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(79, 255, 255, 0.25);
-            color: var(--bg);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
+        .btn-primary:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--accent2); }
 
         .btn-outline {
-            height: 32px;
-            padding: 0 16px;
+            padding: 12px 28px;
             border: 1px solid var(--border);
             color: var(--text);
             font-family: 'Space Mono', monospace;
-            font-size: 0.72rem;
-            letter-spacing: 0.04em;
+            font-size: 0.8rem;
             text-decoration: none;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
-            text-align: center;
+            transition: all 0.2s;
+            display: inline-block;
             background: transparent;
-            border-radius: 3px;
             cursor: none;
-            box-sizing: border-box;
         }
-        .btn-outline:hover, .btn-outline:focus {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: translateY(-2px);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
+        .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
         /* Hero Right — Avatar + terminal */
         .hero-right {
@@ -489,6 +456,15 @@
         .about-text a { color: var(--accent); text-decoration: none; }
         .about-text a:hover { text-decoration: underline; }
 
+        /* ===== PROJECTS CTA ===== */
+        .cta-strip {
+            padding: 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+
         /* ===== SOCIALS BAR ===== */
         .socials-bar {
             padding: 2.5rem 4rem;
@@ -514,7 +490,6 @@
             position: relative;
             overflow: hidden;
             cursor: none;
-            background: none;
         }
         .social-pill::before {
             content: '';
@@ -722,6 +697,7 @@
         .sk-line.short { width: 40%; }
         .sk-line.med { width: 70%; }
 
+        
         /* ===== FOOTER ===== */
         footer {
             padding: 3rem 4rem;
@@ -770,11 +746,21 @@
             text-decoration: none;
             transition: all 0.2s;
             cursor: none;
-            background: none;
         }
         .footer-support:hover { border-color: #00457C; color: #1da1f2; }
 
-        button:focus-visible, a:focus-visible {
+        /* Button base normalization to preserve original styling map */
+        .footer-support, .social-pill, button {
+            appearance: none;
+            font: inherit;
+            color: inherit;
+            border: inherit;
+            padding: inherit;
+            cursor: inherit;
+            display: inline-flex;
+            background: none;
+        }
+        button:focus-visible {
             outline: 2px solid var(--accent);
             outline-offset: 2px;
         }
@@ -793,6 +779,7 @@
             50% { opacity: 0.7; }
         }
 
+        /* Scroll reveal */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -826,12 +813,14 @@
             .nav-links { gap: 1rem; }
             #stack, #projects, footer, #about, .socials-bar { padding-left: 1.5rem; padding-right: 1.5rem; }
             #stack, #projects, footer, #about { padding-top: 3rem; padding-bottom: 3rem; }
+            .stats-grid { grid-template-columns: 1fr; }
             footer { flex-direction: column; align-items: center; gap: 1.5rem; text-align: center; }
             .socials-bar { justify-content: center; }
             .projects-header-row { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
             .about-card { grid-template-columns: 1fr; }
         }
 
+        /* Respect reduced motion */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
@@ -922,14 +911,13 @@
                 <div>
                     <div class="about-label">Background</div>
                     <p class="about-text">
-                       Student exploring technology, web development, and systems tinkering.
+                       still figuring out what to put here.
                     </p>
                 </div>
                 <div>
                     <div class="about-label">Current focus</div>
                     <p class="about-text">
-                        Building web projects, learning Linux automation, and writing Python scripts.
-                    </p>
+                        still figuring out what to put here.
                 </div>
             </div>
         </section>
@@ -992,7 +980,6 @@
                 <div class="repo-skeleton"><div class="sk-line med"></div><div class="sk-line short"></div><div class="sk-line med"></div></div>
             </div>
         </section>
-    </main>
 
     <!-- Footer -->
     <footer>
@@ -1016,16 +1003,10 @@
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        /* Custom Cursor Logic */
         const cursor = document.getElementById('cursor');
         const cursorRing = document.getElementById('cursorRing');
         let mx = 0, my = 0, rx = 0, ry = 0;
-
-        document.addEventListener('mousemove', e => { 
-            mx = e.clientX; 
-            my = e.clientY; 
-        });
-
+        document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
         function animateCursor() {
             cursor.style.left = mx + 'px';
             cursor.style.top = my + 'px';
@@ -1036,32 +1017,14 @@
             requestAnimationFrame(animateCursor);
         }
         animateCursor();
-
         document.addEventListener('mousedown', () => { cursor.style.transform = 'translate(-50%,-50%) scale(0.7)'; });
         document.addEventListener('mouseup', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; });
 
-        /* Event Delegation for Custom Cursor Hover state */
-        document.addEventListener('mouseover', (e) => {
-            const target = e.target.closest('a, button, .social-pill');
-            if (target) {
-                cursor.style.transform = 'translate(-50%,-50%) scale(1.4)';
-                cursorRing.style.width = '48px';
-                cursorRing.style.height = '48px';
-                cursorRing.style.opacity = '0.6';
-            }
+        document.querySelectorAll('a, button, .social-pill').forEach(el => {
+            el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%,-50%) scale(2.5)'; cursorRing.style.width = '60px'; cursorRing.style.height = '60px'; cursorRing.style.opacity = '0.3'; });
+            el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; cursorRing.style.width = '36px'; cursorRing.style.height = '36px'; cursorRing.style.opacity = '0.5'; });
         });
 
-        document.addEventListener('mouseout', (e) => {
-            const target = e.target.closest('a, button, .social-pill');
-            if (target) {
-                cursor.style.transform = 'translate(-50%,-50%) scale(1)';
-                cursorRing.style.width = '36px';
-                cursorRing.style.height = '36px';
-                cursorRing.style.opacity = '0.5';
-            }
-        });
-
-        /* Scroll Reveal Observer */
         const reveals = document.querySelectorAll('.reveal');
         const obs = new IntersectionObserver((entries) => {
             entries.forEach((e, i) => {
@@ -1073,7 +1036,6 @@
         }, { threshold: 0.1 });
         reveals.forEach(el => obs.observe(el));
 
-        /* GitHub Integration */
         const USERNAME = 'stefanutz30';
 
         async function fetchGitHub() {
@@ -1082,15 +1044,10 @@
                     fetch(`https://api.github.com/users/${USERNAME}`),
                     fetch(`https://api.github.com/users/${USERNAME}/repos?sort=updated&per_page=6`)
                 ]);
-
-                if (!userRes.ok || !repoRes.ok) {
-                    throw new Error('GitHub API response failed');
-                }
-
                 const user = await userRes.json();
                 const repos = await repoRes.json();
 
-                if (user && user.avatar_url) {
+                if (user.avatar_url) {
                     const img = document.getElementById('profile-pic');
                     const sk = document.getElementById('pfp-skeleton');
                     img.src = user.avatar_url;
@@ -1139,21 +1096,26 @@
                     grid.querySelectorAll('.reveal').forEach(el => obs.observe(el));
                 } else {
                     grid.style.background = 'none';
-                    grid.innerHTML = `<div style="padding:3rem; color:var(--muted); font-family:'Space Mono',monospace; font-size:0.8rem; opacity:0.7; text-align:center;">
-                        No public repositories found. Check back later!
+                    grid.innerHTML = `<div style="padding:3rem; color:var(--muted); font-family:'Space Mono',monospace; font-size:0.8rem; opacity:0.5; text-align:center;">
+                        Unable to load repositories. Check back later.
                     </div>`;
                 }
             } catch (err) {
-                console.warn('GitHub API fetch failed or rate limited:', err);
-                const grid = document.getElementById('repo-grid');
-                if (grid) {
-                    grid.style.background = 'none';
-                    grid.innerHTML = '<div style="padding:2.5rem;text-align:center;grid-column:1/-1;color:var(--muted);font-family:\'Space Mono\',monospace;font-size:0.8rem;opacity:0.7">Could not load repositories. <a href="https://github.com/stefanutz30" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">View on GitHub ↗</a></div>';
-                }
+                console.error(err);
             }
         }
 
         fetchGitHub();
+
+        setTimeout(() => {
+            const grid = document.getElementById('repo-grid');
+            if (!grid) return;
+            if (grid.querySelector('.repo-skeleton')) {
+                grid.style.background = 'none';
+                grid.innerHTML = '<div style="padding:2.5rem;text-align:center;grid-column:1/-1;color:var(--muted);font-family:Space Mono,monospace;font-size:0.8rem;opacity:0.7">Could not load repositories. <a href="https://github.com/stefanutz30" style="color:var(--accent)">View on GitHub↗</a></div>';
+            }
+        }, 10000);
+
     </script>
 </body>
 </html>
