@@ -1,349 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="#sitemap-stylesheet"?>
+<?xml-stylesheet type="text/xsl" href="#sitemap-style"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-    <!-- ================================================= -->
-    <!-- MAIN PORTFOLIO LANDING PAGE                       -->
-    <!-- ================================================= -->
-    <url>
-        <loc>https://stefanutz30.vercel.app/</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
+  <!-- ========================================== -->
+  <!-- MAIN LANDING PAGE & SECTIONS               -->
+  <!-- ========================================== -->
+  
+  <url>
+    <loc>https://stefanutz30.vercel.app/</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <description>Main Portfolio Landing Page (Stef - Pastoral Theology, Tech &amp; Service)</description>
+  </url>
 
-    <!-- ================================================= -->
-    <!-- INTERNAL SECTIONS (Anchors)                       -->
-    <!-- ================================================= -->
-    <url>
-        <loc>https://stefanutz30.vercel.app/#about</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://stefanutz30.vercel.app/#stack</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://stefanutz30.vercel.app/#projects</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
+  <url>
+    <loc>https://stefanutz30.vercel.app/#hero</loc>
+    <priority>0.9</priority>
+    <description>Hero Section - Introduction and Quick Terminal Snippet</description>
+  </url>
 
-    <!-- ================================================= -->
-    <!-- EXTERNAL PROFILES & REPOSITORIES                  -->
-    <!-- ================================================= -->
-    <url>
-        <loc>https://github.com/stefanutz30</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://github.com/stefanutz30?tab=repositories</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://youtube.com/@Stefanutz_30</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://instagram.com/stefanutz_30</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://twitch.tv/stefanutz30</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://tiktok.com/@Stefanutz300</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://discord.gg/stefanutz30</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
+  <url>
+    <loc>https://stefanutz30.vercel.app/#about</loc>
+    <priority>0.8</priority>
+    <description>About Section - Background and Current Focus</description>
+  </url>
 
-</urlset>
+  <url>
+    <loc>https://stefanutz30.vercel.app/#stack</loc>
+    <priority>0.8</priority>
+    <description>Tech Stack Section - Python, HTML5, Raspberry Pi, Linux, Networking</description>
+  </url>
 
-<!-- ================================================= -->
-<!-- PREMIUM STYLESHEET (XSL) FOR VISUAL DISPLAY       -->
-<!-- ================================================= -->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:s="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <xsl:output method="html" encoding="UTF-8" indent="yes"/>
-    <xsl:template match="/">
-        <html lang="en">
-        <head>
-            <title>XML Sitemap — stefanutz30.dev</title>
-            <style>
-                body {
-                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-                    background-color: #0f172a;
-                    color: #f8fafc;
-                    margin: 0;
-                    padding: 40px;
-                }
-                .container {
-                    max-width: 900px;
-                    margin: auto;
-                    background: #1e293b;
-                    padding: 30px;
-                    border-radius: 12px;
-                    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-                    border: 1px solid #334155;
-                }
-                h1 {
-                    font-size: 24px;
-                    margin-bottom: 5px;
-                    color: #38bdf8;
-                }
-                p.subtitle {
-                    color: #94a3b8;
-                    font-size: 14px;
-                    margin-bottom: 25px;
-                }
-                table {
-                    width: 100%;
-                    border-collapse: collapse;
-                    margin-top: 10px;
-                }
-                th, td {
-                    padding: 12px 15px;
-                    text-align: left;
-                    border-bottom: 1px solid #334155;
-                    font-size: 14px;
-                }
-                th {
-                    background-color: #0f172a;
-                    color: #cbd5e1;
-                    font-weight: 600;
-                }
-                tr:hover {
-                    background-color: #273548;
-                }
-                a {
-                    color: #38bdf8;
-                    text-decoration: none;
-                }
-                a:hover {
-                    text-decoration: underline;
-                }
-                .badge {
-                    background: #0284c7;
-                    color: #fff;
-                    padding: 3px 8px;
-                    border-radius: 4px;
-                    font-size: 11px;
-                    font-weight: bold;
-                }
-            </style>
-        </head>
-        <body>
-            <div class="container">
-                <h1>stefanutz30.dev — Visual XML Sitemap</h1>
-                <p class="subtitle">Generated for portfolio indexing, structured tracking, and navigation. Total URLs: <xsl:value-of select="count(s:urlset/s:url)"/></p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>URL / Location</th>
-                            <th>Priority</th>
-                            <th>Change Frequency</th>
-                            <th>Last Modified</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <xsl:for-each select="s:urlset/s:url">
-                            <tr>
-                                <td>
-                                    <a href="{s:loc}" target="_blank"><xsl:value-of select="s:loc"/></a>
-                                </td>
-                                <td>
-                                    <span class="badge"><xsl:value-of select="s:priority"/></span>
-                                </td>
-                                <td><xsl:value-of select="s:changefreq"/></td>
-                                <td><xsl:value-of select="s:lastmod"/></td>
-                            </tr>
-                        </xsl:for-each>
-                    </tbody>
-                </table>
-            </div>
-        </body>
-        </html>
-    </xsl:template>
-</xsl:stylesheet>    </url>
+  <url>
+    <loc>https://stefanutz30.vercel.app/#projects</loc>
+    <priority>0.9</priority>
+    <description>Projects Section - Showcasing small tools and system builds</description>
+  </url>
 
-    <!-- Embedded Premium Visual Stylesheet (XSL) for Browser Preview -->
-    <xs:element name="sitemap-style">
-        <xs:annotation>
-            <xs:documentation>
-                <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8" />
-                    <title>XML Sitemap - stefanutz30.dev</title>
-                    <style>
-                        :root {
-                            --bg: #080b10;
-                            --card-bg: #111622;
-                            --text: #e2e8f0;
-                            --muted: #64748b;
-                            --accent: #4fffff;
-                            --border: rgba(100, 116, 139, 0.2);
-                        }
-                        body {
-                            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-                            background-color: var(--bg);
-                            color: var(--text);
-                            margin: 0;
-                            padding: 40px 20px;
-                        }
-                        .container {
-                            max-width: 900px;
-                            margin: 0 auto;
-                        }
-                        header {
-                            border-bottom: 1px solid var(--border);
-                            padding-bottom: 20px;
-                            margin-bottom: 30px;
-                        }
-                        h1 {
-                            font-size: 1.8rem;
-                            margin: 0 0 8px 0;
-                            color: #fff;
-                        }
-                        h1 span { color: var(--accent); }
-                        p { color: var(--muted); margin: 0; font-size: 0.95rem; }
-                        .stats-grid {
-                            display: grid;
-                            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                            gap: 15px;
-                            margin-bottom: 30px;
-                        }
-                        .stat-card {
-                            background: var(--card-bg);
-                            border: 1px solid var(--border);
-                            border-radius: 8px;
-                            padding: 15px;
-                        }
-                        .stat-card .label { font-size: 0.85rem; color: var(--muted); }
-                        .stat-card .value { font-size: 1.4rem; font-weight: bold; color: var(--accent); margin-top: 5px; }
-                        table {
-                            width: 100%;
-                            border-collapse: collapse;
-                            background: var(--card-bg);
-                            border: 1px solid var(--border);
-                            border-radius: 8px;
-                            overflow: hidden;
-                        }
-                        th, td {
-                            padding: 14px 18px;
-                            text-align: left;
-                        }
-                        th {
-                            background: rgba(255, 255, 255, 0.02);
-                            font-size: 0.85rem;
-                            text-transform: uppercase;
-                            letter-spacing: 0.05em;
-                            color: var(--muted);
-                            border-bottom: 1px solid var(--border);
-                        }
-                        tr:not(:last-child) td {
-                            border-bottom: 1px solid var(--border);
-                        }
-                        a {
-                            color: var(--accent);
-                            text-decoration: none;
-                        }
-                        a:hover { text-decoration: underline; }
-                        .badge {
-                            background: rgba(79, 255, 255, 0.1);
-                            color: var(--accent);
-                            padding: 3px 8px;
-                            border-radius: 4px;
-                            font-size: 0.8rem;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div class="container">
-                        <header>
-                            <h1>XML Sitemap &mdash; <span>stefanutz30.dev</span></h1>
-                            <p>This is a dynamic visual XML sitemap used by search engine crawlers to index your portfolio structural endpoints.</p>
-                        </header>
-                        <div class="stats-grid">
-                            <div class="stat-card">
-                                <div class="label">Total URLs Mapped</div>
-                                <div class="value">5</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="label">Primary Protocol</div>
-                                <div class="value">HTTPS</div>
-                            </div>
-                        </div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>URL / Route Location</th>
-                                    <th>Priority</th>
-                                    <th>Change Frequency</th>
-                                    <th>Last Modified</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><a href="https://stefanutz30.vercel.app/" target="_blank">https://stefanutz30.vercel.app/</a></td>
-                                    <td><span class="badge">1.00</span></td>
-                                    <td>Weekly</td>
-                                    <td>2026-06-01</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="https://stefanutz30.vercel.app/#about" target="_blank">/#about</a></td>
-                                    <td><span class="badge">0.80</span></td>
-                                    <td>Monthly</td>
-                                    <td>2026-06-01</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="https://stefanutz30.vercel.app/#stack" target="_blank">/#stack</a></td>
-                                    <td><span class="badge">0.80</span></td>
-                                    <td>Monthly</td>
-                                    <td>2026-06-01</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="https://stefanutz30.vercel.app/#projects" target="_blank">/#projects</a></td>
-                                    <td><span class="badge">0.90</span></td>
-                                    <td>Weekly</td>
-                                    <td>2026-06-01</td>
-                                },
-                                <tr>
-                                    <td><a href="https://stefanutz30.vercel.app/#stats" target="_blank">/#stats</a></td>
-                                    <td><span class="badge">0.70</span></td>
-                                    <td>Daily</td>
-                                    <td>2026-06-01</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </body>
-                </html>
-            </xs:documentation>
-        </xs:annotation>
-    </xs:element>
+  <!-- ========================================== -->
+  <!-- EXTERNAL SOCIALS & REPOSITORIES            -->
+  <!-- ========================================== -->
+
+  <url>
+    <loc>https://github.com/stefanutz30</loc>
+    <priority>0.7</priority>
+    <description>External Link: GitHub Profile &amp; Repositories</description>
+  </url>
+
+  <url>
+    <loc>https://discord.gg/stefanutz30</loc>
+    <priority>0.5</priority>
+    <description>External Link: Discord Community</description>
+  </url>
+
+  <url>
+    <loc>https://instagram.com/stefanutz_30</loc>
+    <priority>0.5</priority>
+    <description>External Link: Instagram Profile</description>
+  </url>
+
+  <url>
+    <loc>https://youtube.com/@Stefanutz_30</loc>
+    <priority>0.5</priority>
+    <description>External Link: YouTube Channel</description>
+  </url>
+
+  <url>
+    <loc>https://twitch.tv/stefanutz30</loc>
+    <priority>0.5</priority>
+    <description>External Link: Twitch Channel</description>
+  </url>
+
+  <url>
+    <loc>https://tiktok.com/@Stefanutz300</loc>
+    <priority>0.5</priority>
+    <description>External Link: TikTok Profile</description>
+  </url>
+
 </urlset>
