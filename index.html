@@ -844,7 +844,14 @@
         }
 
         /* ===== RESPONSIVE ===== */
+        @media (pointer: coarse) {
+            body { cursor: auto; }
+            .cursor, .cursor-ring { display: none; }
+        }
+
         @media (max-width: 768px) {
+            body { cursor: auto; }
+            .cursor, .cursor-ring { display: none; }
             #hero {
                 grid-template-columns: 1fr;
                 padding: 7rem 2rem 3rem;
