@@ -630,10 +630,10 @@
             color: var(--text);
         }
 
-        .sp-discord:hover { color: #7289DA; border-color: #7289DA; }
+        .sp-github:hover { color: #ffffff; border-color: #ffffff; }
+        .sp-linkedin:hover { color: #0A66C2; border-color: #0A66C2; }
         .sp-instagram:hover { color: #E4405F; border-color: #E4405F; }
-        .sp-youtube:hover { color: #FF0000; border-color: #FF0000; }
-        .sp-email:hover { color: var(--accent); border-color: var(--accent); }
+        .sp-wsocial:hover { color: var(--accent); border-color: var(--accent); }
 
         /* Section Headers */
         .section-header {
@@ -911,6 +911,7 @@
 
         .footer-icons {
             display: flex;
+            align-items: center;
             gap: 1.5rem;
         }
 
@@ -920,7 +921,9 @@
             transition: color 0.2s, transform 0.2s;
             text-decoration: none;
             cursor: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .footer-icons a:hover {
@@ -1125,8 +1128,8 @@
 
             <div class="hero-right">
                 <div class="avatar-container">
-                    <div class="avatar-skeleton" id="pfp-skeleton"></div>
-                    <img id="profile-pic" class="avatar-img" src="" alt="Stef Profile Picture" style="display:none; position:absolute; top:0; left:0;">
+                    <div class="avatar-skeleton" id="pfp-skeleton" style="display:none;"></div>
+                    <img id="profile-pic" class="avatar-img" src="https://github.com/stefanutz30.png" alt="Stef Profile Picture" style="position:absolute; top:0; left:0;">
                 </div>
 
                 <!-- Interactive Terminal -->
@@ -1175,18 +1178,18 @@
 
         <!-- Social Links -->
         <div class="socials-bar reveal">
-            <a href="https://discord.gg/ut8QneA5nF" target="_blank" rel="noopener noreferrer" class="social-pill sp-discord">
-                <i class="fab fa-discord" aria-hidden="true"></i> Discord
+            <a href="https://github.com/stefanutz30" target="_blank" rel="noopener noreferrer" class="social-pill sp-github">
+                <i class="fab fa-github" aria-hidden="true"></i> GitHub
             </a>
-            <a href="https://instagram.com/stefanutz_30" target="_blank" rel="noopener noreferrer" class="social-pill sp-instagram">
+            <a href="https://www.linkedin.com/in/nastase-stefan-daniel-6679723b1/" target="_blank" rel="noopener noreferrer" class="social-pill sp-linkedin">
+                <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+            </a>
+            <a href="https://www.instagram.com/stefanutz_30/" target="_blank" rel="noopener noreferrer" class="social-pill sp-instagram">
                 <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
             </a>
-            <a href="https://youtube.com/@Stefanutz_30" target="_blank" rel="noopener noreferrer" class="social-pill sp-youtube">
-                <i class="fab fa-youtube" aria-hidden="true"></i> YouTube
+            <a href="https://wsocial.eu/profile/stefanutz30.wsocial.eu" target="_blank" rel="noopener noreferrer" class="social-pill sp-wsocial">
+                <i class="fas fa-globe" aria-hidden="true"></i> W Social
             </a>
-            <button onclick="window.location.href='mailto:s_nastase@icloud.com'" class="social-pill sp-email" type="button">
-                <i class="fas fa-envelope" aria-hidden="true"></i> Email
-            </button>
         </div>
 
         <!-- Tech Stack Section -->
@@ -1238,9 +1241,9 @@
 
         <div class="footer-icons">
             <a href="https://github.com/stefanutz30" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://twitch.tv/stefanutz30" target="_blank" rel="noopener noreferrer" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
-            <a href="https://tiktok.com/@Stefanutz300" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://youtube.com/@Stefanutz_30" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/in/nastase-stefan-daniel-6679723b1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/stefanutz_30/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wsocial.eu/profile/stefanutz30.wsocial.eu" target="_blank" rel="noopener noreferrer" aria-label="W Social"><i class="fas fa-globe"></i></a>
         </div>
 
         <button onclick="window.location.href='mailto:s_nastase@icloud.com'" class="footer-support" type="button">
@@ -1384,40 +1387,70 @@
         /* Fetch GitHub Profile & Repositories with Robust Fallbacks */
         const USERNAME = 'stefanutz30';
 
-        const fallbackRepos = [
+        const featuredProjects = [
             {
-                name: 'stefanutz30.dev',
-                html_url: 'https://github.com/stefanutz30',
-                description: 'Personal portfolio website built with HTML, CSS, and modern interactive elements.',
-                stargazers_count: 1,
+                name: 'ASTO',
+                html_url: 'https://asto-website.vercel.app',
+                description: 'ASTO website.',
+                stargazers_count: 0,
                 forks_count: 0,
-                language: 'HTML',
+                language: 'Website',
                 updated_at: new Date().toISOString()
             },
             {
-                name: 'python-lab-projects',
-                html_url: 'https://github.com/stefanutz30',
-                description: 'Collection of utility scripts, system tools, and algorithmic problems solved in Python.',
-                stargazers_count: 2,
+                name: 'Delta Apps',
+                html_url: 'https://deltaapps.ro',
+                description: 'Delta Apps website.',
+                stargazers_count: 0,
                 forks_count: 0,
-                language: 'Python',
+                language: 'Website',
                 updated_at: new Date().toISOString()
             },
             {
-                name: 'rpi-homelab-configs',
-                html_url: 'https://github.com/stefanutz30',
-                description: 'Configuration scripts and automation playbooks for Linux and Raspberry Pi setups.',
-                stargazers_count: 1,
+                name: 'Dragobete',
+                html_url: 'https://fierce-sphinx-tnk2.here.now/',
+                description: 'The Valentine\'s Day, adapted for Romanian Dragobete holiday.',
+                stargazers_count: 0,
                 forks_count: 0,
-                language: 'Shell',
+                language: 'Website',
+                updated_at: new Date().toISOString()
+            },
+            {
+                name: 'Happy Birthday!',
+                html_url: 'https://zippy-chant-3pxa.here.now',
+                description: 'IT\'S YOUR BIRTHDAY',
+                stargazers_count: 0,
+                forks_count: 0,
+                language: 'Website',
+                updated_at: new Date().toISOString()
+            },
+            {
+                name: 'Studentul Teolog',
+                html_url: 'https://studentulteolog.vercel.app',
+                description: 'Website for Studentul Teolog.',
+                stargazers_count: 0,
+                forks_count: 0,
+                language: 'Website',
+                updated_at: new Date().toISOString()
+            },
+            {
+                name: 'Visual Music',
+                html_url: 'https://crisp-tulip-2bjc.here.now/',
+                description: 'Visual music project.',
+                stargazers_count: 0,
+                forks_count: 0,
+                language: 'Website',
                 updated_at: new Date().toISOString()
             }
         ];
+
+        const fallbackRepos = [];
 
         function renderRepos(repos) {
             const grid = document.getElementById('repo-grid');
             if (!grid) return;
             grid.innerHTML = '';
+            repos = [...featuredProjects, ...repos];
 
             const langColors = {
                 'Python': '#3572A5', 
@@ -1471,20 +1504,8 @@
                         const img = document.getElementById('profile-pic');
                         const sk = document.getElementById('pfp-skeleton');
                         img.src = user.avatar_url;
-                        img.onload = () => { 
-                            img.style.display = 'block'; 
-                            if (sk) sk.style.display = 'none'; 
-                        };
-                    }
-                } else {
-                    // Fallback avatar placeholder
-                    const sk = document.getElementById('pfp-skeleton');
-                    if (sk) {
-                        sk.style.background = 'linear-gradient(135deg, #10161e, #1a2030)';
-                        sk.style.display = 'flex';
-                        sk.style.alignItems = 'center';
-                        sk.style.justifyContent = 'center';
-                        sk.innerHTML = '<i class="fas fa-user" style="font-size:3rem; color:var(--accent);"></i>';
+                        img.style.display = 'block';
+                        if (sk) sk.style.display = 'none';
                     }
                 }
 
@@ -1493,14 +1514,14 @@
                     if (Array.isArray(repos) && repos.length > 0) {
                         renderRepos(repos);
                     } else {
-                        renderRepos(fallbackRepos);
+                        renderRepos([]);
                     }
                 } else {
-                    renderRepos(fallbackRepos);
+                    renderRepos([]);
                 }
             } catch (err) {
-                console.warn('API error, using fallback repo list:', err);
-                renderRepos(fallbackRepos);
+                console.warn('API error, fallback disabled:', err);
+                renderRepos([]);
             }
         }
 
